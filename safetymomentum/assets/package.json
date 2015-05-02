@@ -1,0 +1,11 @@
+{
+  "name": "safetymomentum-assets",
+  "version": "1.0.0",
+  "description": "assets for safetymomentum.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "@brianblocker",
+  "license": "MIT"
+}
