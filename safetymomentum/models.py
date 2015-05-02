@@ -56,7 +56,7 @@ class Moment(models.Model):
     author = models.ForeignKey(user_model, related_name="moments")
     title = models.TextField()
     slug = models.SlugField(unique=True)
-    header_image = models.ForeignKey(Image)
+    header_image = models.ForeignKey(Image, blank=True, null=True)
     summary = models.TextField(
         help_text="Summary text, markdown format")
     detail = models.TextField(
