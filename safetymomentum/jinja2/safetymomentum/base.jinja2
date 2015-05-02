@@ -18,6 +18,44 @@
     {%- block head_extra %}{% endblock %}
   </head>
   <body>
+    {%- block navbar %}
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{url('home')}}">safety-momentum</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li{% if request.path.startswith(url('about')) %} class="active"{% endif %}>
+              <a href="{{url('about')}}">About</a></li>
+            <li{% if request.path.startswith("/api/") %} class="active"{% endif %}>
+              <a href="/api/">API</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {# TODO: user auth
+            <li{% if request.path.startswith('/accounts/') %} class="active"{% endif %}>
+              {% if request.user.is_authenticated() %}
+              <span class="navbar-text">Signed in as
+                <a class="navbar-link" href="{{url('account_profile')}}">{{user_display(user)}}</a>
+                <a class="navbar-link" href="{{url('account_logout')}}">(Sign Out)</a>
+              {% else %}
+              <a class="navbar-link" href="{{url('account_login')}}">Sign In or Create Account</a>
+              {% endif %}
+            </li>
+            #}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    {% endblock navbar %}
     {% block body_container -%}
     <div class="container">
         {% block body_title_elem -%}
