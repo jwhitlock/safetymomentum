@@ -1,0 +1,24 @@
+include .coveragerc
+include .editorconfig
+include AUTHORS.rst
+include CONTRIBUTING.rst
+include HISTORY.rst
+include LICENSE
+include Makefile
+include Procfile
+include README.rst
+include app.json
+include manage.py
+include requirements.txt
+
+recursive-include docs Makefile conf.py *.rst make.bat .keep
+recursive-include static .keep
+recursive-include safetymomentum *.py
+recursive-include safetymomentum/static *.css *.map *.eot *.svg *.ttf *.woff *.js .keep
+recursive-include safetymomentum/templates *.jinja2
+recursive-include safetymomentum/tests *.py
+recursive-include sm_site *.py
+
+recursive-exclude * *.py[co]
+recursive-exclude * __pycache__
+
