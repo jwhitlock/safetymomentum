@@ -47,7 +47,7 @@ setup(
     version=version,
     description='Safety Momentum, for safety!',  # flake8: noqa
     long_description=get_long_description('Safety Momentum, for safety!'),
-    author='John Whitlock',
+    author='Safety Momentum',
     author_email='john@factorialfive.com',
     url='https://github.com/jwhitlock/safetymomentum',
     packages=[
