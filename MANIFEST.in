@@ -10,12 +10,13 @@ include README.rst
 include app.json
 include manage.py
 include requirements.txt
+include requirements-dev.txt
 
 recursive-include docs Makefile conf.py *.rst make.bat .keep
 recursive-include static .keep
 recursive-include safetymomentum *.py
 recursive-include safetymomentum/static *.css *.map *.eot *.svg *.ttf *.woff *.js .keep
-recursive-include safetymomentum/templates *.jinja2
+recursive-include safetymomentum/jinja2 *.jinja2
 recursive-include safetymomentum/tests *.py
 recursive-include sm_site *.py
 

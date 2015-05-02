@@ -2,7 +2,7 @@
 # Requirements for running safetymomentum
 #
 
-Django==1.7.8  # rq.filter: >=1.7,<1.8
+Django==1.8.1
 
 # Load database config from environment
 dj-database-url==0.3.0
@@ -10,7 +10,6 @@ dj-database-url==0.3.0
 # Better templates
 MarkupSafe==0.23
 Jinja2==2.7.3
-jingo==0.7
 
 # Better test runner
 nose==1.3.6

@@ -70,7 +70,7 @@ for local development.
 
     $ mkvirtualenv safetymomentum
     $ cd safetymomentum/
-    $ pip install -r requirements.txt
+    $ pip install -r requirements.txt -r requirements-dev.txt
     $ ./manage.py syncdb
     $ export DEBUG=1
 

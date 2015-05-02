@@ -121,6 +121,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Switch to Jinja2 templates
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': 'sm_site.jinja2.environment',
+        },
+    },
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
@@ -134,14 +145,6 @@ STATIC_URL = '/static/'
 #
 # 3rd Party Libraries
 #
-
-# Jingo / Jinja2 templates
-TEMPLATE_LOADERS = (
-    'jingo.Loader',
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-JINGO_INCLUDE_PATTERN = r'\.jinja2'
 
 # Django nose
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

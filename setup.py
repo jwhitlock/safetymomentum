@@ -40,7 +40,6 @@ test_requirements = [
     'dj_database_url',
     'django_nose',
     'django_extensions',
-    'jingo',
 ]
 
 setup(
