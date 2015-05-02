@@ -36,6 +36,8 @@
           <ul class="nav navbar-nav">
             <li{% if request.path.startswith(url('about')) %} class="active"{% endif %}>
               <a href="{{url('about')}}">About</a></li>
+            <li{% if request.path.startswith("/admin/") %} class="active"{% endif %}>
+              <a href="/admin/">Admin</a></li>
             <li{% if request.path.startswith("/api/") %} class="active"{% endif %}>
               <a href="/api/">API</a></li>
           </ul>
