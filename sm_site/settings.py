@@ -26,6 +26,7 @@ Environment variables:
 ALLOWED_HOSTS - comma-separated list of allowed hosts
 DATABASE_URL - See https://github.com/kennethreitz/dj-database-url
 DEBUG - 1 to enable, 0 to disable, default disabled
+DEFAULT_FILE_STORAGE - See django-storages docs
 EXTRA_INSTALLED_APPS - comma-separated list of apps to add to INSTALLED_APPS
 SECRET_KEY - Overrides SECRET_KEY
 SECURE_PROXY_SSL_HEADER - "HTTP_X_FORWARDED_PROTOCOL,https" to enable
@@ -81,6 +82,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_nose',
     'rest_framework',
+    'storages',
 
     # Our applications
     'safetymomentum',
@@ -154,7 +156,6 @@ else:
     STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
-
 #
 # 3rd Party Libraries
 #
@@ -171,3 +172,10 @@ if DEBUG:
     else:
         assert debug_toolbar
         INSTALLED_APPS.append('debug_toolbar')
+
+# Django Storages
+if environ.get('DEFAULT_FILE_STORAGE'):
+    DEFAULT_FILE_STORAGE = environ['DEFAULT_FILE_STORAGE']
+AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY', '')
+AWS_STORAGE_BUCKET_NAME = environ.get('AWS_STORAGE_BUCKET_NAME', '')

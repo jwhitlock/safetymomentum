@@ -36,6 +36,10 @@ djangorestframework==3.1.1
 # Image manipulation
 Pillow==2.8.1
 
+# Storage of images
+boto==2.38.0
+django-storages-redux==1.2.3
+
 #
 # Requirements for Heroku
 #
