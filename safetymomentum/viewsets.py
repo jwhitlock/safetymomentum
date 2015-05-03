@@ -29,6 +29,7 @@ class MomentViewSet(ModelViewSet):
 
     queryset = Moment.objects.order_by('id')
     serializer_class = MomentSerializer
+    filter_fields = ('author', 'keywords')
 
 
 class UserViewSet(ModelViewSet):
