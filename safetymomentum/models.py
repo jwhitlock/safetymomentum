@@ -23,7 +23,8 @@ class Image(models.Model):
 
     image = models.ImageField()
     original = models.ForeignKey(
-        "Image", help_text="Original image", related_name="derived_images")
+        "Image", blank=True, null=True,
+        help_text="Original image", related_name="derived_images")
     spec = models.CharField(
         help_text="Specification for image",
         blank=False, max_length=20, default=SPEC_ORIGINAL,
