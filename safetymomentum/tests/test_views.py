@@ -10,8 +10,4 @@ class TestHome(TestCase):
     def test_get_home(self):
         """Test GET /."""
         response = self.client.get('/')
-        expected_html = (
-            '<h1 class="smaller">'
-            'Welcome to Safety Momentum'
-            '</h1>')
-        self.assertContains(response, expected_html, html=True)
+        self.assertEqual(response.status_code, 200)
