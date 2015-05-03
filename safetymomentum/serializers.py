@@ -30,7 +30,7 @@ class KeywordSerializer(ModelSerializer):
     def get_moments_url(self, obj):
         """Get the url to retrieve related moments."""
         list_url = reverse('moment-list', request=self.context['request'])
-        return list_url + '?keyword=%s' % obj.id
+        return list_url + '?keywords=%s' % obj.id
 
     class Meta:
         model = Keyword
