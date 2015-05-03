@@ -35151,13 +35151,15 @@ return jQuery;
 
 },{}],"backbone":[function(require,module,exports){
 var Backbone = require('_backbone');
+var jQuery    = require('jquery');
 
+Backbone.$ = jQuery;
 require('./backbone_mixin');
 
 module.exports = Backbone;
 
 
-},{"./backbone_mixin":208,"_backbone":"_backbone"}],"flux":[function(require,module,exports){
+},{"./backbone_mixin":208,"_backbone":"_backbone","jquery":"jquery"}],"flux":[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
