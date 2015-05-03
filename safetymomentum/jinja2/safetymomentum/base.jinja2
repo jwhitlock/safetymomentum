@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block head_title %}TODO: set block head_title{% endblock %}</title>
 
+    {% block head_stylesheets %}
     <link href="{{ static('vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ static('vendor/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css') }}" rel="stylesheet">
+    {% endblock head_stylesheets %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,6 +36,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <li{% if request.path.startswith(url('moments')) %} class="active"{% endif %}>
+              <a href="{{url('moments')}}">Moments</a></li>
             <li{% if request.path.startswith(url('about')) %} class="active"{% endif %}>
               <a href="{{url('about')}}">About</a></li>
             <li{% if request.path.startswith("/admin/") %} class="active"{% endif %}>

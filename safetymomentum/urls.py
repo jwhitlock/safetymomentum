@@ -18,5 +18,8 @@ urlpatterns = patterns(
         name='about'),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/',
-        include('rest_framework.urls', namespace='rest_framework'))
+        include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^moments$', TemplateView.as_view(
+        template_name='safetymomentum/moments.jinja2'),
+        name='moments'),
 )
